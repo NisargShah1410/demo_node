@@ -1,4 +1,3 @@
-##
 name: npm - Cache with Skip
 
 on:  
@@ -18,6 +17,8 @@ jobs:
     - name: Cache node modules
       id: myCacheStep
       uses: actions/cache@v2
+      env:
+          cache-name: cache-node-modules
       with:
         # npm cache files are stored in `~/.npm` on Linux/macOS
         path: ~/.npm
@@ -30,9 +31,3 @@ jobs:
     - name: Install Dependencies
       if: steps.myCacheStep.outputs.cache-hit != 'true'
       run: npm install
-
-    #- name: Build
-     # run: npm build
-
-    #- name: Test
-     # run: npm test
