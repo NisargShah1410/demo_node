@@ -17,4 +17,5 @@ jobs:
       with:
         node-version: '14'
         cache: 'npm'
+        cache-dependency-path: NodeWebApp/package-lock.json
     - run: npm install
