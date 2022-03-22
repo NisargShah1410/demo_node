@@ -1,0 +1,21 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - or:
+          - files=README.md
+          - "#files=1"
+    actions:
+      merge:
+        method: merge
+
+  - name: Assign to n3wt0n if YAML and label as Enhancement
+    conditions:
+      - files~=\.yml
+      - -closed
+    actions:
+      assign:
+        add_users:
+          - n3wt0n
+      label:
+        add:
+          - enhancement
