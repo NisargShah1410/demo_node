@@ -2,7 +2,7 @@ name: npm - Cache with Skip
 
 on:  
   push: 
-    branches: main
+    branches: main1
 
 jobs:
   build:
